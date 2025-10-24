@@ -22,8 +22,18 @@ class LinkedList {
         currentNode.nodeNext = newNode; // points to new node
         currentNode = currentNode.nodeNext; // currentNode becomes next node on list
       }
+      currentNode = currentNode.nodeNext; // move to next node
+    }
+  }
+  /*returns the total number of nodes in the list*/
+  size() {
+    let size = 0;
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      size++;
       currentNode = currentNode.nodeNext;
     }
+    return `Total nodes of list ${size}`;
   }
 
   printList() {

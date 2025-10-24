@@ -20,8 +20,10 @@ let node1 = new LinkedList();
 node1.prepend(10);
 node1.prepend(19);
 node1.prepend(145);
-//node1.append(29);
+node1.append(29);
 
 node1.printList();
+
+console.log(node1.size());
 
 console.log(node1);
