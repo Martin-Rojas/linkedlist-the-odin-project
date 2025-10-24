@@ -1,6 +1,6 @@
 export class Node {
-  constructor(value) {
+  constructor(value = null , nodeNext = null) {
     this.value = value;
-    this.next = null; // pointer to the next node
+    this.nodeNext = nodeNext; // pointer to the next node
   }
 }
