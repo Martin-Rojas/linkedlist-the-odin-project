@@ -36,11 +36,29 @@ class LinkedList {
     return `Total nodes of list ${size}`;
   }
 
+  /* Returns the first node in the list*/
   getHead() {
     if (this.head === null) {
       return "List empty";
     }
-    return `This is the head of linklist ${this.head.value}`;
+    return `The head of linklist ${this.head.value}`;
+  }
+
+  /** tail returns the last node in the list */
+  getTail() {
+    if (this.head === null) {
+      return " List empty";
+    }
+    if (this.head.nodeNext === null) {
+      return " Tail : " + this.head.value;
+    } else {
+      let currentNode = this.head;
+      let tail;
+      while (currentNode !== null) {
+        if (currentNode.nodeNext === null) return (tail = currentNode.value);
+        currentNode = currentNode.nodeNext;
+      }
+    }
   }
 
   printList() {

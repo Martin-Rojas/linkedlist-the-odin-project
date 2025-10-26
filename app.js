@@ -31,3 +31,5 @@ console.log(node1.size());
 console.log(node1);
 
 console.log(node1.getHead());
+
+console.log(`Tail = ${node1.getTail()}`);
