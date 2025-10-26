@@ -17,6 +17,8 @@ import { LinkedList } from "./Linklist.js";
 
 let node1 = new LinkedList();
 
+console.log("Before any insertion " + node1.getHead());
+
 node1.prepend(10);
 node1.prepend(19);
 node1.prepend(145);
@@ -27,3 +29,5 @@ node1.printList();
 console.log(node1.size());
 
 console.log(node1);
+
+console.log(node1.getHead());

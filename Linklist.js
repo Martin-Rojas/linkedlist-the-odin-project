@@ -36,6 +36,13 @@ class LinkedList {
     return `Total nodes of list ${size}`;
   }
 
+  getHead() {
+    if (this.head === null) {
+      return "List empty";
+    }
+    return `This is the head of linklist ${this.head.value}`;
+  }
+
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {
