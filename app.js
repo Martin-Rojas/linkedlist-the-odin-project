@@ -26,10 +26,12 @@ node1.append(29);
 
 node1.printList();
 
-console.log(node1.size());
+console.log("Total nodes of list: " + node1.size());
 
 console.log(node1);
 
 console.log(node1.getHead());
 
 console.log(`Tail = ${node1.getTail()}`);
+
+console.log(`get the node at index ${node1.getAt(5)}`);

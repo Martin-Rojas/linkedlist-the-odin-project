@@ -3,6 +3,7 @@ import { Node } from "./Node.js";
 class LinkedList {
   constructor() {
     this.head = null; // start of the list
+    this.tail = null; // get the last node of list
   }
 
   prepend(value) {
@@ -33,7 +34,7 @@ class LinkedList {
       size++;
       currentNode = currentNode.nodeNext;
     }
-    return `Total nodes of list ${size}`;
+    return size;
   }
 
   /* Returns the first node in the list*/
@@ -53,14 +54,34 @@ class LinkedList {
       return " Tail : " + this.head.value;
     } else {
       let currentNode = this.head;
-      let tail;
       while (currentNode !== null) {
-        if (currentNode.nodeNext === null) return (tail = currentNode.value);
+        if (currentNode.nodeNext === null)
+          return (this.tail = currentNode.value);
         currentNode = currentNode.nodeNext;
       }
     }
   }
 
+  /** returns the node at the given index */
+  getAt(index) {
+    let currrentNode = this.head;
+    let currentIndex = 0; // set list index to 0
+    // Iterates the list
+    while (currrentNode !== null) {
+      // Get error if index is out of list range
+      if (index < this.size()) {
+        if (currentIndex === index) {
+          // Check if index match
+          return currrentNode.value; // return the value of node
+        }
+      } else {
+        return "Index out of range";
+      }
+
+      currrentNode = currrentNode.nodeNext; // Get the next node of list
+      currentIndex += 1; // update the list index
+    }
+  }
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {
