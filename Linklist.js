@@ -55,8 +55,10 @@ class LinkedList {
     } else {
       let currentNode = this.head;
       while (currentNode !== null) {
-        if (currentNode.nodeNext === null)
-          return (this.tail = currentNode.value);
+        if (currentNode.nodeNext === null) {
+          this.tail = currentNode;
+          return this.tail.value;
+        }
         currentNode = currentNode.nodeNext;
       }
     }
@@ -82,6 +84,31 @@ class LinkedList {
       currentIndex += 1; // update the list index
     }
   }
+
+  // Removes the last element from the list
+  pop() {
+    // If list is empty
+    if (this.head === null) return null;
+    // Check if there is only one node
+    if (this.head.nodeNext === null) {
+      const valueRemoved = this.head.value; // Save value removed
+      this.head = null; // Delete the only node
+      return valueRemoved; // Return the value removed it
+    }
+
+    // Find the second-to-last node
+    let current = this.head;
+
+    // Get the second-to-last node
+    while (current.nodeNext.nodeNext !== null) {
+      current = current.nodeNext;
+    }
+    // console.log("display the second to last: "+ current);
+    const valueRemoved = current.nodeNext.value; // store value of last node
+    current.nodeNext = null; // unlink the last node
+    return valueRemoved;
+  }
+
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {

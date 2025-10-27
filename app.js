@@ -24,14 +24,30 @@ node1.prepend(19);
 node1.prepend(145);
 node1.append(29);
 
+//node1.printList();
+
+//console.log("Total nodes of list: " + node1.size());
+
+//console.log(node1);
+
+//console.log(node1.getHead());
+
+//console.log(`Tail = ${node1.getTail()}`);
+
+//console.log(`get the node at index ${node1.getAt(5)}`);
+console.log("Total nodes of list: " + node1.size());
+console.log(node1.pop());
+console.log("Total nodes of list after pop 1: " + node1.size());
+node1.pop();
+console.log("Total nodes of list after pop 2: " + node1.size());
+console.log(`print the list /n`)
 node1.printList();
 
-console.log("Total nodes of list: " + node1.size());
 
-console.log(node1);
+// let nodeList2 = new LinkedList();
 
-console.log(node1.getHead());
+// nodeList2.prepend(10);
 
-console.log(`Tail = ${node1.getTail()}`);
+// nodeList2.printList();
 
-console.log(`get the node at index ${node1.getAt(5)}`);
+// console.log(nodeList2.pop());
