@@ -10,8 +10,13 @@ class LinkedList {
   prepend(value) {
     // Create new element with the new value
     let newNode = new Node(value);
-    newNode.nodeNext = this.head; // new node points to old head
-    this.head = newNode; // new node becomes the new head
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.nodeNext = this.head; // new node points to old head
+      this.head = newNode; // new node becomes the new head
+    }
   }
 
   /* Adds a new node containing value to the end of the list*/
