@@ -118,14 +118,24 @@ class LinkedList {
   contains(findVal) {
     let currentNode = this.head;
     while (currentNode !== null) {
-      if (currentNode.value === findVal) return true;
+      if (currentNode.value === findVal) return true; // check if values match
       currentNode = currentNode.nodeNext;
     }
     return false;
   }
 
   /** Returns the index of the node containing value, or null if not found.*/
-  find(value) {}
+  find(value) {
+    let currentNode = this.head;
+    let index = 0;
+
+    while (currentNode !== null) {
+      if (currentNode.value === value) return index;
+      currentNode = currentNode.nodeNext;
+      index++;
+    }
+    return null;
+  }
 
   /** Represents your LinkedList objects as strings, so you can print them
    *  out and preview them in the console*/
