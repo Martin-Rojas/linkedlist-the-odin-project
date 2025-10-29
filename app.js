@@ -53,10 +53,13 @@ import { LinkedList } from "./Linklist.js";
 
 const list = new LinkedList();
 
-// list.append("dog");
-// list.append("rooster");
-// list.append("donkey");
-// list.prepend(`cow`);
-// list.append("cat");
-// list.prepend(`rat`);
-// list.printList();
+list.append("dog");
+list.append("rooster");
+list.append("donkey");
+list.prepend(`cow`);
+list.append("cat");
+list.prepend(`rat`);
+list.printList();
+
+console.log(`this is the head of list ` + list.getHead());
+console.log(`this is the tail of list ` + list.getTail());

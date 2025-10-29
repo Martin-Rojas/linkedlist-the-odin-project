@@ -10,6 +10,7 @@ class LinkedList {
   prepend(value) {
     // Create new element with the new value
     let newNode = new Node(value);
+    // Check if the line is empty
     if (this.head === null) {
       this.head = newNode;
       this.tail = newNode;
@@ -39,7 +40,6 @@ class LinkedList {
         currentNode = currentNode.nodeNext; // move to next node
       }
     }
-    console.log(`Tail: ${this.tail.value}  Head: ${this.head.value}`);
   }
   /*returns the total number of nodes in the list*/
   size() {
@@ -57,7 +57,7 @@ class LinkedList {
     if (this.head === null) {
       return "List empty";
     }
-    return `The head of linklist ${this.head.value}`;
+    return this.head.value;
   }
 
   /** tail returns the last node in the list */
@@ -65,18 +65,8 @@ class LinkedList {
     if (this.head === null) {
       return " List empty";
     }
-    if (this.head.nodeNext === null) {
-      return " Tail : " + this.head.value;
-    } else {
-      let currentNode = this.head;
-      while (currentNode !== null) {
-        if (currentNode.nodeNext === null) {
-          this.tail = currentNode;
-          return this.tail.value;
-        }
-        currentNode = currentNode.nodeNext;
-      }
-    }
+
+    return this.tail.value;
   }
 
   /** returns the node at the given index */
