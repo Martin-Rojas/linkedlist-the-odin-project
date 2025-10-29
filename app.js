@@ -71,3 +71,5 @@ console.log(`get node at index 4: ${list.getAt(4)}`);
 console.log("value romeved: " + list.pop());
 console.log(`size of list: ${list.size()}`);
 console.log(`After pop() this is the tail of list ` + list.getTail());
+
+console.log(list.contains(`bird`));

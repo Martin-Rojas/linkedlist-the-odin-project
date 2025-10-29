@@ -113,6 +113,23 @@ class LinkedList {
     return valueRemoved;
   }
 
+  /** Returns true if the passed in value is in the list and
+   *  otherwise returns false. */
+  contains(findVal) {
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.value === findVal) return true;
+      currentNode = currentNode.nodeNext;
+    }
+    return false;
+  }
+
+  /** Returns the index of the node containing value, or null if not found.*/
+  find(value) {}
+
+  /** Represents your LinkedList objects as strings, so you can print them
+   *  out and preview them in the console*/
+  toString() {}
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {
