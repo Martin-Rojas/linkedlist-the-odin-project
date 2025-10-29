@@ -106,8 +106,9 @@ class LinkedList {
     while (current.nodeNext.nodeNext !== null) {
       current = current.nodeNext;
     }
-    // console.log("display the second to last: "+ current);
+
     const valueRemoved = current.nodeNext.value; // store value of last node
+    this.tail = current; // Update the tail
     current.nodeNext = null; // unlink the last node
     return valueRemoved;
   }
