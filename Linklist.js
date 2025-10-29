@@ -144,14 +144,14 @@ class LinkedList {
     let listString = "";
 
     while (currentNode) {
-      listString += `( ${currentNode.value} ) -> `;
+      listString += `( ${currentNode.value} ) -> `; // add current node to string
       currentNode = currentNode.nodeNext;
     }
 
     listString += "null";
     return listString;
   }
-  
+
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {
