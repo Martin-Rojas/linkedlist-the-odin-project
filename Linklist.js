@@ -65,24 +65,22 @@ class LinkedList {
     if (this.head === null) {
       return " List empty";
     }
-
     return this.tail.value;
   }
 
   /** returns the node at the given index */
   getAt(index) {
     let currrentNode = this.head;
-    let currentIndex = 0; // set list index to 0
+    let currentIndex = 1; // set list index to 0
     // Iterates the list
     while (currrentNode !== null) {
       // Get error if index is out of list range
-      if (index < this.size()) {
-        if (currentIndex === index) {
-          // Check if index match
-          return currrentNode.value; // return the value of node
-        }
-      } else {
-        return "Index out of range";
+      if (currrentNode.nodeNext === null) {
+        console.log(`index out of range`);
+      }
+      if (currentIndex === index) {
+        // Check if index match
+        return currrentNode.value; // return the value of node
       }
 
       currrentNode = currrentNode.nodeNext; // Get the next node of list

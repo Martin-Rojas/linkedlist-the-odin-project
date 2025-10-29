@@ -59,7 +59,11 @@ list.append("donkey");
 list.prepend(`cow`);
 list.append("cat");
 list.prepend(`rat`);
+list.prepend(`chicken`);
 list.printList();
 
 console.log(`this is the head of list ` + list.getHead());
 console.log(`this is the tail of list ` + list.getTail());
+
+console.log(`size of list: ${list.size()}`);
+console.log(`get node at index 4: ${list.getAt(4)}`);
