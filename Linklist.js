@@ -139,7 +139,19 @@ class LinkedList {
 
   /** Represents your LinkedList objects as strings, so you can print them
    *  out and preview them in the console*/
-  toString() {}
+  toString() {
+    let currentNode = this.head;
+    let listString = "";
+
+    while (currentNode) {
+      listString += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.nodeNext;
+    }
+
+    listString += "null";
+    return listString;
+  }
+  
   printList() {
     let currentNode = this.head;
     while (currentNode !== null) {

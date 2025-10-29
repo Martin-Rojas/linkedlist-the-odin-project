@@ -73,4 +73,6 @@ console.log(`size of list: ${list.size()}`);
 console.log(`After pop() this is the tail of list ` + list.getTail());
 
 console.log(list.contains(`bird`));
-console.log(`find in index: `+ list.find(`dog`));
+console.log(`find in index: ` + list.find(`dog`));
+
+console.log(list.toString());
