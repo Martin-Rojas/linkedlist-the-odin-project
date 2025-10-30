@@ -159,6 +159,39 @@ class LinkedList {
       currentNode = currentNode.nodeNext;
     }
   }
+
+  /** Inserts a new node with the provided value at the given index */
+  insertAt(value, index) {
+    // Create a newNode
+    const newNode = new Node(value);
+
+    // Check if the list is empty
+    if (this.head === null) {
+      console.log(`List is empty, cannot insert at that index`);
+      return;
+    }
+    let currentNode = this.head;
+    let currentIndex = 0;
+
+    /**  Traverse the list and get the prevNode where the newNode
+     *   will be insert it.
+     */
+    while (currentNode !== null && currentIndex < index - 1) {
+      currentNode = currentNode.nodeNext;
+      currentIndex++;
+    }
+
+    newNode.nodeNext = currentNode.nodeNext; // newNode points to next node
+    currentNode.nodeNext = newNode; // prevNodes point to newNode
+
+    // Update tail if we inserted at the end
+    if (newNode.nodeNext === null) {
+      this.tail = newNode;
+    }
+  }
+
+  /** Removes the node at the given index. */
+  removeAt(index) {}
 }
 
 export { LinkedList };

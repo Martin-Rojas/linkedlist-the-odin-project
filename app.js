@@ -76,3 +76,7 @@ console.log(list.contains(`bird`));
 console.log(`find in index: ` + list.find(`dog`));
 
 console.log(list.toString());
+
+console.log(list.insertAt(`snake`, 6));
+console.log(list.toString());
+console.log(`tail = ${list.getTail()}`);
