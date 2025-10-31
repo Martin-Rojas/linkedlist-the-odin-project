@@ -80,3 +80,7 @@ console.log(list.toString());
 console.log(list.insertAt(`snake`, 6));
 console.log(list.toString());
 console.log(`tail = ${list.getTail()}`);
+
+console.log(list.removeAt(6));
+console.log(list.toString());
+console.log(`tail = ${list.getTail()}`);

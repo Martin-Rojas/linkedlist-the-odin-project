@@ -191,7 +191,40 @@ class LinkedList {
   }
 
   /** Removes the node at the given index. */
-  removeAt(index) {}
+  removeAt(index) {
+    //Empty list
+    if (!this.head) return null;
+    //Remove head
+    if (index === 0) {
+      const removedValue = this.head.value;
+      this.head = this.head.nodeNext;
+
+      // If list becomes empty, update tail too
+      if (!this.head) this.tail = null;
+      return removedValue;
+    }
+    /** Traverse the list to get index */
+    let currentIndex = 0;
+    let currentNode = this.head;
+
+    while (currentNode !== null && currentIndex < index - 1) {
+      currentNode = currentNode.nodeNext;
+      currentIndex++;
+    }
+    // If index is out of bounds
+    if (!currentNode || !currentNode.nodeNext) return null;
+
+    const removedValue = currentNode.nodeNext.value;
+
+    currentNode.nodeNext = currentNode.nodeNext.nodeNext;
+    // Check if the last node will be pointing to null
+    if (currentNode.nodeNext === null) {
+      // Update the tail
+      this.tail = currentNode;
+    }
+
+    return removedValue;
+  }
 }
 
 export { LinkedList };
